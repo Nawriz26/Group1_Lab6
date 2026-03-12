@@ -10,7 +10,6 @@ AMyPawn::AMyPawn()
 {
     PrimaryActorTick.bCanEverTick = true;
 
-    // Create components
     MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
     RootComponent = MeshComponent;
 
@@ -31,7 +30,6 @@ void AMyPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
     Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-    // Bind axis mappings
     PlayerInputComponent->BindAxis("MoveForward", this, &AMyPawn::MoveForward);
     PlayerInputComponent->BindAxis("MoveRight", this, &AMyPawn::MoveRight);
 }

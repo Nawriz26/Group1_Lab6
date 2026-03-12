@@ -9,16 +9,18 @@
 UCLASS()
 class GROUP1_LAB6_API AMyPawn : public APawn
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-    // Called every frame
-    virtual void Tick(float DeltaTime) override;
+    AMyPawn();
 
-    // Called to bind functionality to input
+protected:
+    virtual void BeginPlay() override;
+
+public:
+    virtual void Tick(float DeltaTime) override;
     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-    // Movement functions
     void MoveForward(float Value);
     void MoveRight(float Value);
 
